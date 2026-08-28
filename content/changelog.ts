@@ -9,8 +9,8 @@ export interface ChangelogEntry {
 
 export const CHANGELOG: ReadonlyArray<ChangelogEntry> = [
   {
-    version: '1.0.90',
-    date: '2026-08-26',
+    version: '1.0.12',
+    date: '2026-08-28',
     summary: 'Initial public release.',
     changes: [
       'Granular blur for the chat list, conversations and group panels, with reveal-on-hover, adjustable intensity and auto-blur on idle.',

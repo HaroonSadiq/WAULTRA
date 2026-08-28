@@ -5,7 +5,7 @@
 
 export const SITE_NAME = 'WA WEB ULTRA';
 export const SITE_TAGLINE = 'Privacy & Tools for WhatsApp Web';
-export const VERSION = '1.0.90';
+export const VERSION = '1.0.12';
 export const COMPAT = 'Chrome, Edge & Brave 111+';
 
 /** Shown as "Last updated" on the legal pages. Update this on each deploy that
@@ -28,14 +28,15 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://wawebultra.com'
 ).replace(/\/$/, '');
 
-// Homepage section anchors (smooth-scroll). The full Privacy Policy page lives at
-// /privacy and is linked from the footer.
+// Homepage section anchors (smooth-scroll) + the Changelog page. The full
+// Privacy Policy page lives at /privacy and is linked from the footer.
 export const NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Home', href: '/#top' },
   { label: 'Working', href: '/#working' },
   { label: 'Features', href: '/#features' },
   { label: 'Privacy', href: '/#privacy' },
   { label: 'FAQ', href: '/#faq' },
+  { label: 'Changelog', href: '/changelog' },
 ];
 
 export const FOOTER_LINKS = {
