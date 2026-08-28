@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+ * Theme tokens.
+ *
+ * LIGHT-FIRST: the bare :root block is the complete, canonical light palette —
+ * every color has its value here. Dark redefines ONLY what changes, once under
+ * the OS media query (guarded so an explicit light choice still wins) and again
+ * under [data-theme="dark"] so the toggle wins in both directions.
+ * ======================================================================== */
+:root {
+  --brand: #00a884;
+  --brand-ink: #04231c; /* text on a brand-green button */
+  --brand-glow: rgba(0, 168, 132, 0.16);
+
+  --bg: #ffffff;
+  --bg-2: #f2f5f7;
+  --card: #ffffff;
+  --line: #d5dde1;
+  --text: #0b141a;
+  --text-muted: #6b7c86;
+  --nav: #3f4c54; /* nav links — higher contrast than muted */
+
+  --warn: #f5c518;
+  --danger: #f15c6d;
+
+  /* The privacy band stays dark in BOTH themes — the page's spine. */
+  --band: #04231c;
+  --band-text: #e9edef;
+  --band-muted: #8696a0;
+  --band-line: rgba(233, 237, 239, 0.14);
+
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --ring: rgba(0, 168, 132, 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --brand: #06cf9c;
+    --brand-ink: #04231c;
+    --brand-glow: rgba(6, 207, 156, 0.15);
+
+    --bg: #0b141a;
+    --bg-2: #111b21;
+    --card: #111b21;
+    --line: #223039;
+    --text: #e9edef;
+    --text-muted: #8696a0;
+    --nav: #c7d1d6; /* nav links — higher contrast than muted */
+
+    --header-bg: rgba(11, 20, 26, 0.92);
+    --ring: rgba(6, 207, 156, 0.6);
+  }
+}
+
+:root[data-theme='dark'] {
+  --brand: #06cf9c;
+  --brand-ink: #04231c;
+  --brand-glow: rgba(6, 207, 156, 0.15);
+
+  --bg: #0b141a;
+  --bg-2: #111b21;
+  --card: #111b21;
+  --line: #223039;
+  --text: #e9edef;
+  --text-muted: #8696a0;
+
+  --ring: rgba(6, 207, 156, 0.6);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--brand);
+    color: var(--brand-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Reveal-on-scroll is handled entirely inline by components/Reveal.tsx, which
+ * defaults to visible and can never leave content hidden — see that file. */
+
+/* Typographic document styling for legal / support pages. */
+.doc {
+  color: var(--text);
+}
+.doc h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 5rem;
+}
+.doc h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+.doc p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-top: 0.75rem;
+}
+.doc ul {
+  margin-top: 0.75rem;
+  padding-left: 1.15rem;
+  list-style: disc;
+  color: var(--text-muted);
+}
+.doc li {
+  margin-top: 0.35rem;
+  line-height: 1.65;
+}
+.doc a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.doc strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.doc th,
+.doc td {
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+.doc th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.doc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+}
