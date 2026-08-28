@@ -36,7 +36,7 @@ export const NAV: ReadonlyArray<{ label: string; href: string }> = [
   { label: 'Features', href: '/#features' },
   { label: 'Privacy', href: '/#privacy' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'Changelog', href: '/changelog' },
+  { label: 'Changelog', href: '/#changelog' },
 ];
 
 export const FOOTER_LINKS = {
@@ -44,7 +44,7 @@ export const FOOTER_LINKS = {
     { label: 'Features', href: '/#features' },
     { label: 'How it works', href: '/#how' },
     { label: 'Support', href: '/support' },
-    { label: 'Changelog', href: '/changelog' },
+    { label: 'Changelog', href: '/#changelog' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },

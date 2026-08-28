@@ -5,6 +5,7 @@ import { FeatureGrid } from '@/components/sections/FeatureGrid';
 import { PrivacyBand } from '@/components/sections/PrivacyBand';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { Faq } from '@/components/sections/Faq';
+import { Changelog } from '@/components/sections/Changelog';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { BLOCKS } from '@/content/copy';
 import { FAQ } from '@/content/faq';
@@ -88,6 +89,7 @@ export default function HomePage() {
       <PrivacyBand />
       <HowItWorks />
       <Faq />
+      <Changelog />
       <FinalCta />
     </>
   );
