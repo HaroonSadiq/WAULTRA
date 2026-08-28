@@ -18,7 +18,7 @@ export const STORE_URL = process.env.NEXT_PUBLIC_STORE_URL ?? '';
 
 /** Public contact address. Set NEXT_PUBLIC_SUPPORT_EMAIL to override. */
 export const SUPPORT_EMAIL =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'support@wawebultra.com';
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'mharoonsadiq8@gmail.com';
 
 /** GA4 Measurement ID. Empty disables analytics AND the cookie bar entirely. */
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
