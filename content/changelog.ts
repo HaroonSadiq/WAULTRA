@@ -9,6 +9,17 @@ export interface ChangelogEntry {
 
 export const CHANGELOG: ReadonlyArray<ChangelogEntry> = [
   {
+    version: '1.0.13',
+    date: '2026-08-31',
+    summary: 'Reliability polish across the lock screen, Quick Chat and first-run.',
+    changes: [
+      'Lock screen now accepts your PIN reliably even when WhatsApp Web tries to grab focus — no more reloading to unlock.',
+      'Quick Chat retries automatically the moment a number is still loading, and shows a clear, friendly message when a number isn’t on WhatsApp.',
+      'Fresh installs apply straight away: open tabs get a one-tap “reload to activate” prompt instead of needing a restart.',
+      'A more compact dashboard that fits more on screen.',
+    ],
+  },
+  {
     version: '1.0.12',
     date: '2026-08-28',
     summary: 'Initial public release.',

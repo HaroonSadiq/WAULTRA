@@ -5,7 +5,7 @@
 
 export const SITE_NAME = 'WA WEB ULTRA';
 export const SITE_TAGLINE = 'Privacy & Tools for WhatsApp Web';
-export const VERSION = '1.0.12';
+export const VERSION = '1.0.13';
 export const COMPAT = 'Chrome, Edge & Brave 111+';
 
 /** Shown as "Last updated" on the legal pages. Update this on each deploy that
