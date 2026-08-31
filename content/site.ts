@@ -12,9 +12,11 @@ export const COMPAT = 'Chrome, Edge & Brave 111+';
  *  changes the policy text (the /privacy date is what the Chrome Web Store sees). */
 export const LEGAL_UPDATED = '2026-08-26';
 
-/** Chrome Web Store item URL. Empty until the extension is published — the CTA
- *  buttons render as a disabled "Coming soon" state while this is unset. */
-export const STORE_URL = process.env.NEXT_PUBLIC_STORE_URL ?? '';
+/** Chrome Web Store item URL. Now published — the CTA buttons link straight to
+ *  the listing. Set NEXT_PUBLIC_STORE_URL to override (e.g. staging). */
+export const STORE_URL =
+  process.env.NEXT_PUBLIC_STORE_URL ||
+  'https://chromewebstore.google.com/detail/bplobfflbfgfhcicoclajambiehdbjfl?utm_source=item-share-cb';
 
 /** Public contact address. Set NEXT_PUBLIC_SUPPORT_EMAIL to override. */
 export const SUPPORT_EMAIL =
