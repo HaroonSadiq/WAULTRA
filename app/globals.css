@@ -77,12 +77,29 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Kill any sideways scroll on mobile ("pane boundary" bleed). `clip` — not
+     * `hidden` — because `hidden` would turn <html> into a scroll container and
+     * break the sticky header; `clip` prevents scroll without that side effect. */
+    overflow-x: clip;
   }
   body {
     background: var(--bg);
     color: var(--text);
     font-feature-settings: 'cv11', 'ss01';
     text-rendering: optimizeLegibility;
+    /* Belt-and-braces: the body can never exceed the viewport width, and long
+     * unbroken tokens (URLs, emails) wrap instead of pushing the page wide. */
+    max-width: 100%;
+    overflow-x: clip;
+    overflow-wrap: break-word;
+  }
+  /* Media never overflows its column on small screens. Next/Image `fill` sets its
+   * own inline sizing, so this only guards plain/broken images and inline SVGs. */
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
   }
   ::selection {
     background: var(--brand);
