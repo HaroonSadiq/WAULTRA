@@ -9,7 +9,7 @@ export function PermissionTable({ variant = 'light' }: { variant?: 'light' | 'ba
   const bc = band ? 'border-band-line' : 'border-line';
   return (
     <div className={clsx('min-w-0 max-w-full overflow-x-auto rounded-card border', bc)}>
-      <table className="w-full min-w-[420px] border-collapse text-left text-sm">
+      <table className="w-full border-collapse text-left text-sm sm:min-w-[420px]">
         <thead>
           <tr className={band ? 'text-band-muted' : 'text-muted'}>
             <th className={clsx('border-b px-4 py-3 font-semibold', bc)}>Permission</th>
