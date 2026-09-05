@@ -19,9 +19,12 @@ export default function PrivacyPage() {
       <div className="not-prose rounded-card border border-line bg-bg-2 p-5">
         <p className="!mt-0 text-ink">
           <strong className="text-brand">In one sentence:</strong> {SITE_NAME} runs entirely inside
-          your own browser. It has <strong>no servers</strong>, and it{' '}
-          <strong>never transmits, sells, or shares</strong> your messages, contacts, phone numbers,
-          or any other data. Everything it stores stays on your device.
+          your own browser and has <strong>no servers of our own</strong>. It{' '}
+          <strong>never sells or shares</strong> your data, and the only time any message content
+          leaves your device is the <strong>one feature you control</strong> — the optional Message
+          Translator, which sends a message&apos;s text to a translation service only when{' '}
+          <em>you</em> click Translate (see the Message Translator section below). Everything else
+          stays on your device.
         </p>
       </div>
 
@@ -51,12 +54,59 @@ export default function PrivacyPage() {
       <p>
         The extension does not operate any server, backend, or account system. It contains no
         analytics, no advertising, no trackers, and no third-party SDKs. The extension operates no
-        server and sends nothing to us. The only network access it performs is fetching the status
-        media file you clicked to download, directly from WhatsApp&apos;s own servers. Everything else
-        happens locally in your browser, and your information never leaves your computer.
+        server and sends nothing to us. Its only outbound network access is: (a) fetching the status
+        media file you clicked to download, directly from WhatsApp&apos;s own servers, and (b) — if you
+        turn on the optional Message Translator — sending a single message&apos;s text to a translation
+        service when you click Translate (see the next section). Everything else happens locally in
+        your browser.
       </p>
 
-      <h2>2. Information the extension accesses (on your device only)</h2>
+      <h2>2. The optional Message Translator (the one exception)</h2>
+      <p>
+        {SITE_NAME} includes an optional <strong>Message Translator</strong>. It is{' '}
+        <strong>off by default</strong> and does nothing until you turn it on and click{' '}
+        <strong>Translate</strong> on a specific message (or use the translate button on your own
+        compose box).
+      </p>
+      <p>
+        When — and only when — you click Translate, the extension sends{' '}
+        <strong>the text of that single message</strong> to a third-party, privacy-respecting
+        translation service (<strong>Lingva Translate</strong>, an open-source Google-Translate proxy,
+        with <strong>LibreTranslate</strong> as a fallback) to retrieve the translation. The translated
+        text is returned and shown to you in the chat.
+      </p>
+      <ul>
+        <li>
+          This happens <strong>per message, only on your explicit click</strong> — never
+          automatically or in the background.
+        </li>
+        <li>
+          <strong>We do not operate these services, and we do not store, log, sell, or use this text
+          for any other purpose.</strong> The request is made directly from your browser to the
+          translation service.
+        </li>
+        <li>
+          Only the <strong>message text</strong> is sent — no names, phone numbers, account
+          identifiers, or any other data.
+        </li>
+        <li>
+          The translation services are independent third parties under their own privacy terms; we
+          chose services that need no API key and are designed not to log queries, but their handling
+          of requests is governed by those third parties.
+        </li>
+        <li>
+          If you never enable the Message Translator, or never click Translate,{' '}
+          <strong>no message content ever leaves your device.</strong>
+        </li>
+      </ul>
+      <p>
+        The translation endpoints are declared in the extension&apos;s host permissions
+        (<code>lingva.ml</code>, <code>lingva.lunar.icu</code>, <code>translate.plausibility.cloud</code>,{' '}
+        <code>libretranslate.de</code>, <code>translate.terraprint.co</code>) so the request can be
+        made reliably. They are contacted <em>only</em> for this feature, on your click.
+      </p>
+
+      <h2>3. Information the extension accesses (on your device only)</h2>
       <p>
         To provide its features, the extension reads parts of the WhatsApp Web page you already have
         open, in your browser, in real time. This processing happens locally and is not recorded or
@@ -108,7 +158,7 @@ export default function PrivacyPage() {
         files, your camera, or your microphone.
       </p>
 
-      <h2>3. Where your data is stored</h2>
+      <h2>4. Where your data is stored</h2>
       <ul>
         <li>
           <strong>On your device only.</strong> Persistent settings (templates, tasks, saved
@@ -126,15 +176,20 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>4. What we never do</h2>
+      <h2>5. What we never do</h2>
       <ul>
-        <li>We never send your messages, contacts, phone numbers, or media to us or to any third party.</li>
+        <li>
+          We never send your messages, contacts, phone numbers, or media to us or to any third
+          party — with the single, user-initiated exception of the optional Message Translator
+          (section 2), which sends only the text of a message you explicitly choose to translate, and
+          which you can leave off.
+        </li>
         <li>We never sell, rent, or share your data.</li>
         <li>We run no analytics, telemetry, advertising, or fingerprinting in the extension.</li>
         <li>We load no remote code — all logic ships inside the extension package.</li>
       </ul>
 
-      <h2>5. Permissions and why they are needed</h2>
+      <h2>6. Permissions and why they are needed</h2>
       <table>
         <thead>
           <tr>
@@ -154,7 +209,7 @@ export default function PrivacyPage() {
         </tbody>
       </table>
 
-      <h2>6. Data retention &amp; how to delete your data</h2>
+      <h2>7. Data retention &amp; how to delete your data</h2>
       <ul>
         <li>
           In-memory data is discarded automatically when you close or reload the WhatsApp Web tab.
@@ -167,19 +222,19 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>7. Children</h2>
+      <h2>8. Children</h2>
       <p>
         The extension is a general-purpose utility and is not directed to children under 13. It does
         not knowingly collect information from anyone — it collects nothing.
       </p>
 
-      <h2>8. Changes to this policy</h2>
+      <h2>9. Changes to this policy</h2>
       <p>
         If this policy changes, the &ldquo;Last updated&rdquo; date above will change and the revised
         policy will be posted at this URL. Material changes will be reflected before they take effect.
       </p>
 
-      <h2>9. Contact</h2>
+      <h2>10. Contact</h2>
       <p>
         Questions about this policy or your privacy? Email{' '}
         <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.

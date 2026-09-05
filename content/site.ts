@@ -10,7 +10,7 @@ export const COMPAT = 'Chrome, Edge & Brave 111+';
 
 /** Shown as "Last updated" on the legal pages. Update this on each deploy that
  *  changes the policy text (the /privacy date is what the Chrome Web Store sees). */
-export const LEGAL_UPDATED = '2026-08-26';
+export const LEGAL_UPDATED = '2026-09-05';
 
 /** Chrome Web Store item URL. Now published — the CTA buttons link straight to
  *  the listing. Set NEXT_PUBLIC_STORE_URL to override (e.g. staging). */
