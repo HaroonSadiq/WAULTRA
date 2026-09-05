@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = pageMeta({
   title: 'Privacy Policy',
   description:
-    'How WA WEB ULTRA handles your data: it runs entirely on your device and transmits nothing. This page also discloses the website’s own analytics.',
+    'How WA WEB ULTRA handles your data: it runs on your device and sends nothing to us — the optional Message Translator is the one third-party exception, on your click. This page also discloses the website’s own analytics.',
   path: '/privacy',
 });
 

@@ -20,7 +20,7 @@ export const FAQ: ReadonlyArray<FaqItem> = [
   {
     id: 'see-my-messages',
     q: 'Do you see my messages?',
-    a: 'No. Nothing leaves your device, and there is no server for it to be sent to. Everything the extension does happens on your own computer.',
+    a: 'No. We run no server, so your messages never reach us — everything the extension does happens on your own computer. The one exception is the optional Message Translator: when you tap Translate on a message, its text is sent to a third-party translation service (not to us) to translate it. It is off by default and only runs on your click.',
   },
   {
     id: 'need-account',

@@ -11,7 +11,7 @@ export function FeatureGrid() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             A set of quiet, local tools that make WhatsApp Web faster to work in — no account, no
-            cloud, nothing uploaded.
+            cloud, nothing sent to us.
           </p>
         </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/content/site';
 
 export const DEFAULT_DESCRIPTION =
-  'Blur private chats, lock WhatsApp Web behind a PIN, save statuses and stay organized — all 100% on your device.';
+  'Blur private chats, lock WhatsApp Web behind a PIN, save statuses and stay organized — on your device, no account.';
 
 /** Per-route metadata with canonical + OpenGraph + Twitter, all resolved
  *  against metadataBase (set in the root layout). */

@@ -20,7 +20,7 @@ import {
 
 export const HERO = {
   h1: 'Your WhatsApp Web, private by default.',
-  sub: 'One click blurs names, messages and media. A PIN locks the whole tab. Everything runs on your computer — no servers, no accounts, nothing uploaded.',
+  sub: 'One click blurs names, messages and media. A PIN locks the whole tab. It runs on your computer — no servers of ours, no accounts, no sign-up.',
   primary: 'Add to Chrome — Free',
   secondary: 'See how it works',
 };
@@ -28,7 +28,7 @@ export const HERO = {
 export const TRUST_PILLS: ReadonlyArray<{ label: string; icon: LucideIcon }> = [
   { label: '100% on-device', icon: MonitorSmartphone },
   { label: 'No account needed', icon: UserX },
-  { label: 'Nothing leaves your device', icon: ShieldCheck },
+  { label: 'On-device by default', icon: ShieldCheck },
   { label: 'Free', icon: Gift },
 ];
 
@@ -77,7 +77,7 @@ export const PRIVACY_BAND_ITEMS: ReadonlyArray<{ label: string; icon: LucideIcon
 export const PRIVACY_BAND = {
   headline: "We can't see any of this. By design.",
   websiteNote:
-    'This website uses Google Analytics to count visits — the extension itself sends nothing, ever.',
+    'This website uses Google Analytics to count visits. The extension sends nothing on its own — the only exception is the opt-in Message Translator, which sends a message’s text to a translation service when you tap Translate.',
   closing:
     'It cannot read your browsing history, your other tabs, your files, your camera or your microphone.',
   icons: { key: KeyRound },
@@ -89,7 +89,8 @@ export const PERMISSIONS: ReadonlyArray<{ perm: string; use: string }> = [
   { perm: 'scripting', use: 'Re-apply features after you reload WhatsApp Web' },
   { perm: 'downloads', use: 'Save a status or a CSV — only when you click' },
   { perm: 'alarms + notifications', use: 'Desktop reminders for tasks you create' },
-  { perm: 'web.whatsapp.com', use: 'The one website it runs on' },
+  { perm: 'web.whatsapp.com', use: 'The website it runs on' },
+  { perm: 'translation service', use: 'Only if you use Message Translator — sends a message’s text to Lingva/LibreTranslate when you tap Translate' },
 ];
 
 export const HOW_IT_WORKS: ReadonlyArray<{ step: number; title: string; body: string }> = [
